@@ -1,0 +1,17 @@
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+  <label for="nom"> Nom: </label>
+  <input id="nom" type="text" formControlName="nom" />
+
+  <label for="prenom">Prenom: </label>
+  <input id="prenom" type="text" formControlName="prenom" />
+
+  <label for="adresse">Adresse: </label>
+  <input id="adresse" type="text" formControlName="adresse" />
+
+  <label for="numeroTel">Numero de telephone : </label>
+  <input id="numeroTel" type="text" formControlName="numeroTel" />
+
+  <br />
+
+  <button type="submit">Submit</button>
+</form>

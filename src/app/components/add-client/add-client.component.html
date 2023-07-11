@@ -1,0 +1,28 @@
+<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('../assets/plant.jpg'); background-repeat: no-repeat; background-size: cover; display: flex; align-items: center; justify-content: center;">
+  <div style="width: 400px;">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center; font-weight: bold;">Client Information</h5>
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" class="form-control" id="nom" required [(ngModel)]="client.nom" name="nom" />
+        </div>
+        <div class="form-group">
+          <label for="prenom">Prenom</label>
+          <input type="text" class="form-control" id="prenom" required [(ngModel)]="client.prenom" prenom="prenom" />
+        </div>
+        <div class="form-group">
+          <label for="adresse">Adresse Postale</label>
+          <input type="text" class="form-control" id="adresse" required [(ngModel)]="client.adresse" adresse="adresse" />
+        </div>
+        <div class="form-group">
+          <label for="numeroTel">Numero de Telephone</label>
+          <input type="text" class="form-control" id="numeroTel" required [(ngModel)]="client.numeroTel" numeroTel="numeroTel" />
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <button routerLink="/list-client" (click)="saveClients()" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

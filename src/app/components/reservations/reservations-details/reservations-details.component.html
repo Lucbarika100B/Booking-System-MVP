@@ -1,0 +1,31 @@
+<div class="border mb-5 p-1"
+  style="border-radius:2%; border-width: 5px; border-color: #2f4f4f; background-color: #778899; color: #f5f5f5; text-align: center;">
+  <h5> <strong>Show title : {{eventDetails?.title}}</strong> </h5>
+  <p> Time : {{eventDetails?.time}} </p>
+  <p> <strong> Show Date : {{eventDetails?.date}}</strong> </p>
+  <p> Tickets : Regular Price : </p>
+  <strong>
+    <p> $CAD {{eventDetails?.priceRegular}}</p>
+  </strong>
+  <p> Tickets : Student Price : </p>
+  <strong>
+    <p> $CAD {{eventDetails?.priceStudent}} </p>
+  </strong>
+  <button type="submit" (click)="downloadData()"> Download Bookings Data</button>
+</div> <br />
+<br/>
+
+<h5 style="text-align: center;"> List of customers Bookings </h5>
+<ng-container *ngFor="let client of mergedData">
+  <div class="border mb-2 p-2" style="border-color: #b0c4de; background-color: #f8f8ff; color: #696969;">
+    <div><strong>Name:</strong> {{ client.prenom + " " + client.nom }}</div>
+    <div><strong>Telephone:</strong> {{ client.numeroTel }}</div>
+    <div><strong>Address:</strong> {{ client.adresse }}</div>
+    <div><strong>Regular Tickets:</strong> {{ client.regularTickets }}</div>
+    <div><strong>Student Tickets:</strong> {{ client.studentTickets }}</div>
+    <div><strong>Regular Tickets Price Total :</strong> {{ client.regularTicketTotal }} $CAD</div>
+    <div><strong>Students Tickets Price Total :</strong> {{ client.studentTicketTotal }} $CAD</div>
+    <div><strong>Total price paid :</strong> {{ client.studentTicketTotal + client.regularTicketTotal }} $CAD</div>
+    <button (click)="openDialog(client)"> Update customer details </button>
+  </div>
+</ng-container>

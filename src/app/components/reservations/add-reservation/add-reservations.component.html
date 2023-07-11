@@ -1,0 +1,43 @@
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;">
+    <div
+        style="width: 50%; border-radius: 10px; padding: 20px; background-color: #f7f7f7; box-shadow: 0px 0px 10px rgba(0,0,0,0.1);">
+        <p style="font-size: 24px; font-weight: bold; margin-bottom: 20px;"> Tickets Reservations </p>
+        <div>{{event?.title}}</div>
+        <div>{{event?.date}}</div>
+        <div>{{event?.time}}</div>
+        <div>Student Price : <strong>  {{event?.priceStudent}} $CAD </strong></div>
+        <div>Regular Price : <strong>  {{event?.priceRegular}} $CAD </strong> </div> 
+
+        <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" style="margin-top: 20px;">
+          <strong> <p> Choose number of regular tickets </p> </strong> 
+            <input type="number" formControlName="regularTickets" style="width: 100%; padding: 5px;">
+            <strong>  <p> Add Desired  Students Tickets </p> </strong> 
+            <input type="number" formControlName="studentTickets" style="width: 100%; padding: 5px;">
+            <br />
+            <button type="submit"
+                style="width: 100%; padding: 10px; margin-top: 10px; background-color: #007bff; color: white; border: none; cursor: pointer;">Reserve</button>
+        </form>
+    </div>
+</div>
+
+
+<ng-template #secondDialog>
+    <h2 matDialogTitle>Booking Confirmation Summary </h2>
+    <mat-dialog-content>
+        <p> <strong> Spectacle name :  {{event?.title}}  </strong> </p>
+
+        <p><strong> Reservation Details :  </strong> </p>
+        <p>  Customer First name : {{client.prenom}}</p>
+        <p> Customer Last name : {{client.nom}} </p>
+        <p> Customer Phone number : {{client.numeroTel}} </p>
+        <p> Customer Adress : {{client.adresse}}</p>
+        <p> Regular Tickets Total: {{calcRegular}} $CAD  </p>
+        <p>  Students Tickets Total : {{calcStudent}} $CAD  </p>
+        <strong> Total Price : {{calcRegular + calcStudent }} $CAD </strong>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button color="primary" (click)="onCloseSummaryDialog()">
+            OK </button>
+    </mat-dialog-actions>
+</ng-template>

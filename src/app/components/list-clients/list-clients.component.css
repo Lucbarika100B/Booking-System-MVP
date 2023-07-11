@@ -1,0 +1,16 @@
+
+.card:first-child {
+    margin-top : 60px;
+}
+
+.container {
+    margin-top : 50px;
+}
+
+.fixed-button {
+    position: fixed !important;
+    top : 0;
+    right : 20px;
+    padding : 8px 16px;
+    font-size : 14px;
+}

@@ -1,0 +1,39 @@
+<div> <strong><p style="font-size: 24px; color: #333; text-align: center;">Ajouter un nouveau Spectacle : </p> </strong>
+
+<form [formGroup]="spectacleForm" (ngSubmit)="onSubmit()" style="max-width: 400px; margin: 0 auto;">
+  
+  <label for="title" style="font-weight: bold; margin-bottom: 10px;">Titre:</label>
+  <input id="title" type="text" formControlName="title" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;" />
+  
+  <label for="time" style="font-weight: bold; margin-bottom: 10px;">Heure:</label>
+  <input id="time" type="time" formControlName="time" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;" />
+  
+
+
+  <label for="date" style="font-weight: bold; margin-bottom: 10px;">Date:</label>
+  <input id="date" type="date" formControlName="date" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;" />
+
+  <label for="category" style="font-weight: bold; margin-bottom: 10px;">Category:</label>
+  <select id="category" formControlName="category" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;">
+    <option value="regular">Horror</option>
+    <option value="student">Comedy</option>
+    <option value="student">Thrillers</option>
+    <option value="student">Actions & Combats</option>
+
+
+  </select>
+
+
+  <label for="priceRegular" style="font-weight: bold; margin-bottom: 10px;">Regular Price:</label>
+  <input id="priceRegular" type="number" formControlName="priceRegular" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;" />
+  
+  <label for="priceStudent" style="font-weight: bold; margin-bottom: 10px;">Student Price:</label>
+  <input id="priceStudent" type="number" formControlName="priceStudent" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;" />
+
+
+
+  <br />
+
+  <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Submit</button>
+  
+</form>

@@ -1,0 +1,11 @@
+label {
+    color: #B4886B;
+    font-weight: bold;
+    display: initial-block;
+    width: 80px;
+}
+
+.submit-form{
+    max-width:  300px;
+    margin: auto;
+}

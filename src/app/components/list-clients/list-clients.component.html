@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center" style="padding-top: 20px;">
+          <button class="btn btn-primary w-50" routerLink="/add-client">Ajouter Nouveau Client</button>
+      </div>
+      
+        <div class="row justify-content-start">
+          <div *ngFor="let client of clients" class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 w-100">
+              <div class="card-body">
+                <h5 class="card-title">Client Informations</h5>
+                <p class="card-text" style="font-size: 14px;">
+                  <strong>Nom :</strong> {{client.nom}} <br />
+                  <strong>Prenom :</strong> {{client.prenom}} <br />
+                  <strong>Adresse :</strong> {{client.adresse}} <br />
+                  <strong>Numero de telephone :</strong>
+                  <span class="phone-number">{{client.numeroTel}}</span>
+                </p>
+              </div>
+              <button class="btn btn-success btn-sm"  (click)="bookAShow(client.id)">Book A Show</button>
+              <div class="card-footer">
+                <div class="d-flex flex-column">
+                  <button class="btn btn-primary btn-sm mb-2" (click)="updateClient(client)">Modifier Client</button>
+                  <button class="btn btn-danger btn-sm mb-2" (click)="deleteClient(client)">Supprimer Client</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-clients-details *ngIf="isChildActive" [client]="selectedClient" [childAction]="childAction"
+      (completedChange)="setChildActive($event)"></app-clients-details>
+  </div>
+  
+  <style>
+    .phone-number {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  </style>
+  

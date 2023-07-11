@@ -1,0 +1,19 @@
+<form [formGroup]="spectacleForm" (ngSubmit)="onSubmit()">
+    <label for="title"> Titre: </label>
+    <input id="title" type="text" formControlName="title" />
+  
+    <label for="date">Date: </label>
+    <input id="date" type="date" formControlName="date" />
+  
+    <label for="time">Time: </label>
+    <input id="time" type="time" formControlName="time" />
+  
+    <label for="price">Prix: </label>
+  
+<input type="number" formControlName="priceRegular"/>  
+<input type="number" formControlName="priceStudent"/>  
+
+    <br />
+  
+    <button type="submit">Submit</button>
+  </form>

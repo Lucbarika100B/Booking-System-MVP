@@ -1,0 +1,36 @@
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <div style="max-width: 800px; color:rgb(48, 50, 62);">
+    <div class="card-deck">
+      <ng-container *ngFor="let item of listOfShows">
+        <div class="card mb-4">
+          <div class="card-body">
+            <strong> <h5 class="card-title" style="font-weight: bold;"> {{item?.title}}</h5></strong>
+            <h5 class="card-title" style="font-weight: bold;">Heure : {{item?.time}}</h5>
+            <strong> <p class="card-text">Date: {{item.date}}</p> </strong> 
+            <a href="#" class="card-link" style="color: #007bff; text-decoration: none;">Student Price : $CAD
+              {{item?.priceStudent}}</a> <br/>
+            <a href="#" class="card-link" style="color: #007bff; text-decoration: none;">Regular Price : $CAD
+              {{item?.priceRegular}}</a>
+
+          </div>
+          <div class="card-footer">
+            <ng-container *ngIf="clientId">
+              <a class="btn btn-primary mr-2" (click)="onReserve(item.id)">Buy tickets</a>
+            </ng-container>
+            
+            <ng-container *ngIf="!clientId">
+              <a class="btn btn-primary mr-2" (click)="onUpdateShow(item)"
+                style="background-color: #4CAF50; color: white; padding: 5px 10px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Update</a>
+              <a class="btn btn-primary mr-2" (click)="onDelete(item.id)"
+                style="background-color: #dc3545; color: white; padding: 5px 10px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Delete</a>
+              <a class="btn btn-primary" (click)="showBookingDetails(item.id)"> Show Bookings </a>
+            </ng-container>
+
+
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
